@@ -13,7 +13,7 @@ header{
   background: black;
   color: white;
   padding: 8px 0px 6px 40px;
-  height: 45px;
+  height: 50px;
 }
 header h1{
   display: inline;
@@ -41,20 +41,54 @@ nav ul li a {
   text-decoration: none;
   margin-right: 30px;
 }
+
+nav ul li a:hover{
+  color: gold;
+  font-weight: bold;
+}
+
 #nav{
   font-family: sans-serif;
 }
 .container{
-  margin-top: 125px;
   margin: 0 auto;
+  margin-top: 110px;
   color: white;
   text-align: center;
   text-decoration-color: white;
-  width: 350px;
-  height: 400px;
+  width: 400px;
+  height: 450px;
   background-color: #303030
 }
 .container h1{
   color:white;
   background: #303030
+}
+
+.container img{
+  width: 120px;
+  height: 120px;
+  margin-top: -60px;
+  margin-bottom: 8px;
+}
+
+#activities{
+  list-style-type: none;
+  text-align: center;
+}
+
+#activities li{
+  text-align: center;
+  margin-right: 35px;
+  margin-top: 11px;
+}
+
+#activities li a{
+  color: white;
+  text-decoration: none;
+}
+
+#activities li a:hover{
+  color: gold;
+  font-weight: bold;
 }
