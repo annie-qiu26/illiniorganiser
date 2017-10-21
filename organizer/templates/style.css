@@ -9,8 +9,7 @@ html{
   background-color: rgba(40,40,40,1);
   border-radius: rpx;
   margin: 0 auto;
-  margin-top: 200px;
-  text-align: center;
+  margin-top: 180px;
   outline: 1px solid #fff;
   outline-offset: -33px;
 }
@@ -45,6 +44,7 @@ input[type="password"]{
 .btn-login{
   padding: 10px 20px;
   color: #fff;
+  margin-top: 10px;
   background-color: #FFD700;
   border: none;
   border-radius: 4px;
