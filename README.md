@@ -6,7 +6,7 @@ Go to [this link](https://www.jetbrains.com/student/) and sign up with your illi
 Framework: [Django](https://www.djangoproject.com)
 Go to [this link](https://docs.djangoproject.com/en/1.11/topics/install/) for steps on how to install Django. Try and go through [this guide](https://docs.djangoproject.com/en/1.11/intro/tutorial01/) to understand how Django works. 
 
-Frontend: [Bootstrap](https://getbootstrap.com/docs/3.3/components/#navbar) and [Semantic-UI] (https://semantic-ui.com/elements/button.html). 
+Frontend: [Bootstrap](https://getbootstrap.com/docs/3.3/components/#navbar) and [Semantic-UI](https://semantic-ui.com/elements/button.html). 
 DO NOT REINVENT THE WHEEL. These two are pretty popular front-end libraries and relatively easy to implement. They have every component we could possibly need. You do not need to install or download either of the libraries. I have included the [cdn](https://www.webopedia.com/TERM/C/CDN.html) links to both these libraries in the `base.html` file under the templates directory. 
 
 Running Django:
