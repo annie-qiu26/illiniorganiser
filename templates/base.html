@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="viewport" content="width=320">
+
+    <!-- Bootstrap CDN -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+    <!-- Semantic-UI CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.10/semantic.min.css">
+    <script src="https://cdn.jsdelivr.net/semantic-ui/2.2.10/semantic.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+    {% load staticfiles %}
+
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+
+    <title>{% block title %}{% endblock %}</title>
+    <script src = "https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script type = "text/javascript">
+      $(document).ready(function(){
+        $(".menu-icon").click(function(){
+          $(".menu-icon").toggleClass("active")
+        })
+        $(".menu-icon").click(function(){
+          $(".sidebar").toggleClass("active")
+        })
+      })
+    </script>
+</head>
+
+<body>
+  <header>
+        <nav>
+          <ul id = "nav">
+            <li> <a href="{% url 'index' %}"> ILLINI ORGANIZER </a></li>
+          </ul>
+          <div class = "menu-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </nav>
+  </header>
+  <div class = "sidebar">
+    <a href="#"><img src = ""></a>
+    <ul class = "menu">
+      <li><a href = "{% url 'index' %}">Home</a></li>
+      <li><a href = "#">About</a></li>
+      <li><a href = "#">Academic</a></li>
+      <li><a href = "#">Greek</a></li>
+      <li><a href = "#">Sports</a></li>
+      <li><a href = "#">Other</a></li>
+    </ul>
+  </div>
+
+{% block content %}
+
+{% endblock %}
+
+</body>
+</html>
