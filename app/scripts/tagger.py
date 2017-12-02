@@ -1,3 +1,9 @@
+# Must be run after define_tags.py and download_orgs.py
+#
+# Uses natural language processing to automatically
+# assign tags to organizations based on their
+# names, summaries, and descriptions.
+
 from rake_nltk import Rake
 from app.models import Organization, Tag
 import pprint

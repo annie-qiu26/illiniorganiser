@@ -1,3 +1,11 @@
+# Must be run after download_orgs.py
+#
+# Reads organizations.json and downloads user data
+# from U of I connections. This doesn't include every student
+# in the school--only those listed on U of I Connections
+# as leaders of RSO's. This script creates associations
+# between student leaders and their respective organizations.
+
 from urllib import request
 import json
 import pprint

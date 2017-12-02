@@ -1,3 +1,7 @@
+# Reads organizations.json and downloads
+# detailed organization data from U of I connections.
+
+
 from urllib import request
 import json
 import pprint
