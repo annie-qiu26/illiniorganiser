@@ -32,7 +32,7 @@ class Tag(models.Model):
 class Organization(models.Model):
     tags = models.ManyToManyField(Tag)
     name = models.CharField(_('name'), max_length=64, unique=True)
-    abbr = models.CharField(_('abbreviation'), max_length=10, unique=True, null=True, blank=True, default='')
+    abbr = models.CharField(_('abbreviation'), max_length=10, null=True, blank=True, default='')
     found_date = models.DateTimeField(_('date founded'))
     end_date = models.DateTimeField(_('date ended'), null=True, blank=True)
     summary = models.TextField(_('summary'), max_length=256, default='')

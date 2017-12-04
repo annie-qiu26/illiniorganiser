@@ -728,7 +728,7 @@
       "Id": "177218",
       "InstitutionId": 5594,
       "ParentOrganizationId": 30724,
-      "Name": "Al-Jalal Magazine",
+      "Name": "Mus•lim Magazine",
       "ShortName": null,
       "WebsiteKey": "muslimmag",
       "ProfilePicture": null,
@@ -1861,26 +1861,6 @@
       ],
       "CategoryNames": [
         "Other Social"
-      ],
-      "Status": "Active",
-      "Visibility": "Public"
-    },
-    {
-      "@search.score": 1.0,
-      "Id": "158369",
-      "InstitutionId": 5594,
-      "ParentOrganizationId": 30724,
-      "Name": "Anti-Discrimination Task Force",
-      "ShortName": "ADTF",
-      "WebsiteKey": "ADTF",
-      "ProfilePicture": null,
-      "Description": null,
-      "Summary": "The goal of this RSO is to foster a dialogue on issues related to discrimination of any kind in our world.  Furthermore, to bring the UIUC community together and create an accepting, empathetic atmosphere for all students of all walks of life.",
-      "CategoryIds": [
-        "1778"
-      ],
-      "CategoryNames": [
-        "Rights/Freedom Issues"
       ],
       "Status": "Active",
       "Visibility": "Public"

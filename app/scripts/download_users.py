@@ -15,15 +15,20 @@ from django.contrib.auth.models import User
 
 DRY_RUN = True  # dry runs print would-be changes without saving them
 DOWNLOAD_ALL = False  # true for production, false for testing when you don't want to download everything
-NUM_ORGS = 50  # if DOWNLOAD_ALL is false, only pull this many orgs
+ORGS_RANGE = range(50, 60)  # if DOWNLOAD_ALL is false, only pull this many orgs
 
 pp = pprint.PrettyPrinter()
 URL_BASE = 'https://illinois.campuslabs.com/engage/api/discovery/organization/'
 URL_END = '/position?take=100'
 
 with open('app/scripts/organizations.json') as file:
+
     organizations = json.load(file)
-    for i in range(len(organizations) if DOWNLOAD_ALL else NUM_ORGS):
+    organizations_count = 0
+    positions_count = 0
+    users_count = 0
+
+    for i in (range(len(organizations)) if DOWNLOAD_ALL else ORGS_RANGE):
         organization_data = organizations['value'][i]
         url = URL_BASE + str(organization_data['Id']) + URL_END
         response = request.urlopen(url)
@@ -35,6 +40,8 @@ with open('app/scripts/organizations.json') as file:
         # pp.pprint(positions)
 
         organization = Organization.objects.get(name=organization_data['Name'])
+        organizations_count += 1
+
         print(organization)
         print('=' * len(str(organization)))
 
@@ -49,14 +56,15 @@ with open('app/scripts/organizations.json') as file:
                 position_type = 'M'
             else:
                 print('Weird position type:')
-                print('=====================================')
+                print('*'*20)
                 pp.pprint(position)
-                print('=====================================')
+                print('*'*20)
             position = OrganizationPosition(name=position_data['name'].strip(),
                                             type=position_type,
                                             organization=organization
                                             )
 
+            positions_count += 1
             print('Added position:', position, 'of type:', position_type)
 
             if not DRY_RUN:
@@ -67,7 +75,11 @@ with open('app/scripts/organizations.json') as file:
                             first_name=holder['firstName'],
                             last_name=holder['lastName']
                             )
+                users_count += 1
                 print('  Added user:', user)
 
                 if not DRY_RUN:
                     user.save()
+
+    print()
+    print('Succesfully downloaded {} users in {} positions for {} organizations'.format(users_count, positions_count, organizations_count))

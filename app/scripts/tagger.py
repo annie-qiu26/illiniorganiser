@@ -9,7 +9,7 @@ from app.models import Organization, Tag
 import pprint
 
 
-TOLERANCE = 12  # number of keywords to consider
+MIN_RELEVANCE = 2  # minimum RAKE relevance score for a keyword to be considered
 DRY_RUN = True  # dry runs print would-be changes without saving them
 RESET = False  # remove existing associations with tags before starting
 
@@ -17,7 +17,7 @@ RESET = False  # remove existing associations with tags before starting
 r = Rake()
 pp = pprint.PrettyPrinter()
 
-orgs = list(Organization.objects.all()[:50])
+orgs = list(Organization.objects.all())
 tags = list(Tag.objects.all())
 
 for org in orgs:
@@ -32,7 +32,8 @@ for org in orgs:
     print(org.name)
     print('-' * len(org.name))
 
-    keywords_string = ' '.join(r.get_ranked_phrases()[:TOLERANCE])
+    keywords_string = ' '.join([item[1] for item in
+                                filter(lambda a: a[0] >= MIN_RELEVANCE, r.get_ranked_phrases_with_scores())])
 
     for tag in tags:
         if tag.name.lower() in keywords_string:
