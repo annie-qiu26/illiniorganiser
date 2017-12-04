@@ -20,7 +20,8 @@ First, clone this repo and `cd` to your local copy in your terminal.
 ### Installing packages
 Packages are all the third party Python modules we need to run our app, such as Django. Packaging tools exist to streamline the package installation process. [Pipenv](https://docs.pipenv.org) is the best Python packaging tool out there. Pip is required to install Pipenv; if you don't have it already, check out [this link](https://pip.pypa.io/en/stable/installing/) to set it up. Once you have Pip installed, run the following commands in your terminal:
 1. `pip install pipenv` Installs pipenv itself
-2. `pipenv install` Creates a virtual environment, installs the packages listed in Pipfile into the virtual environment
+2. `pipenv install` Creates a virtual environment, installs the packages listed in Pipfile into the virtual environment. The location of the virtualenv will be displayed.
+3. Set the python interpreter in PyCharm to the the virtualenv created by Pipenv. Do this by going to Preferences > Project:illiniorganiser > Project Interpreter and adding a new local interpreter. Set the location to the path of the virtualenv's python interpreter, which on Mac should look similar to `~/.local/share/virtualenvs/illiniorganiser-sMBxFtlA/bin/python3.4`.
 
 ### Running Django
 Once you have installed the packages with Pipenv, run these commands to get the server going:
@@ -32,7 +33,7 @@ Once you have installed the packages with Pipenv, run these commands to get the 
 6. Go to [this link](http://127.0.0.1:8000/admin/) to go to the admin site and log in with the username and password you created earlier. 
 
 ### Adding data
-Nothing will appear on the webapp the first time you open it because there's no data. To get a feel for how the database works, follow the following steps to make an organization:
+Nothing will appear on the webapp the first time you open it because there's no data. To get a feel for how the database works, follow the these steps to make an organization:
 1. Go to [the admin page](http://127.0.0.1:8000/admin/). 
 2. Click on RSO and create a new RSO. 
 3. Reload the [web app](http://127.0.0.1:8000/app/#).
