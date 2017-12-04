@@ -21,7 +21,7 @@ First, clone this repo and `cd` to your local copy in your terminal.
 Packages are all the third party Python modules we need to run our app, such as Django. Packaging tools exist to streamline the package installation process. [Pipenv](https://docs.pipenv.org) is the best Python packaging tool out there. Pip is required to install Pipenv; if you don't have it already, check out [this link](https://pip.pypa.io/en/stable/installing/) to set it up. Once you have Pip installed, run the following commands in your terminal:
 1. `pip install pipenv` Installs pipenv itself
 2. `pipenv install` Creates a virtual environment, installs the packages listed in Pipfile into the virtual environment. The location of the virtualenv will be displayed.
-3. Set the python interpreter in PyCharm to the the virtualenv created by Pipenv. Do this by going to Preferences > Project:illiniorganiser > Project Interpreter and adding a new local interpreter. Set the location to the path of the virtualenv's python interpreter, which on Mac should look similar to `~/.local/share/virtualenvs/illiniorganiser-sMBxFtlA/bin/python3.4`.
+3. Set the python interpreter in PyCharm to the the virtualenv created by Pipenv. By default, PyCharm will use your system Python interpreter, which doesn't have the necessary packages installed. Change this by going to PyCharm > Preferences > Project:illiniorganiser > Project Interpreter and adding a new local interpreter. Set the location to the path of the virtualenv's python interpreter.
 
 ### Running Django
 Once you have installed the packages with Pipenv, run these commands to get the server going:
@@ -30,7 +30,7 @@ Once you have installed the packages with Pipenv, run these commands to get the 
 3. `python manage.py createsuperuser`. At this point it will prompt you to enter your desired username, email and password. The email field is not required; you can leave it blank and press enter. When you're typing in your password in the terminal the characters will NOT appear so keep typing and press enter. 
 4. `python manage.py runserver`. 
 5. Open a web browser and go to [this link](http://127.0.0.1:8000/app/#) to open the web app.** 
-6. Go to [this link](http://127.0.0.1:8000/admin/) to go to the admin site and log in with the username and password you created earlier. 
+6. Go to [this link](http://127.0.0.1:8000/admin/) to go to the admin site and log in with the username and password you created earlier.
 
 ### Adding data
 Nothing will appear on the webapp the first time you open it because there's no data. To get a feel for how the database works, follow the these steps to make an organization:
@@ -39,4 +39,4 @@ Nothing will appear on the webapp the first time you open it because there's no 
 3. Reload the [web app](http://127.0.0.1:8000/app/#).
 4. You can click on the name of the RSO which will send you to a "detail" page of the organization. (The link is working if a webpage with just the name of the RSO appears).
 
-Creating all of the organizations and other data manually would take forever, so I wrote some scripts in `app/scripts/` to generate all of the initial data automatically. Check out their comments to understand how they work. To run a script, type `execfile('app/scripts/script_name.py')` into the Django console.
+Creating all of the organizations and other data manually would take forever, so I wrote some scripts in `app/scripts/` to generate all of the initial data automatically. Check out their comments to understand how they work. To run a script, type `execfile('app/scripts/script_name.py')` into PyCharm's Django console.

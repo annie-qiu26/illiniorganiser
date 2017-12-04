@@ -21,7 +21,7 @@ pp = pprint.PrettyPrinter()
 URL_BASE = 'https://illinois.campuslabs.com/engage/api/discovery/organization/'
 URL_END = '/position?take=100'
 
-with open('app/scripts/organizations.json') as file:
+with open('app/scripts/organizations.json', encoding='utf8') as file:
 
     organizations = json.load(file)
     organizations_count = 0
