@@ -3,7 +3,7 @@ from .models import *
 
 
 def index(request):
-    tags = Tag.objects.all()
+    tags = Tag.objects.filter(breadth='B')
     return render(request, 'app/index.html', {'tags': tags})
 
 

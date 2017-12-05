@@ -5,6 +5,8 @@
 {% load staticfiles %}
 
 {% block content %}
+    {% include 'app/navbar.html' %}
+    {% include 'app/sidebar.html' %}
     {% for tag in tags %}
         <div class="card" style="width: 20rem;">
             <img class="card-img-top" alt="{{ tag.name }} logo">

@@ -5516,9 +5516,7 @@ a.text-dark:focus, a.text-dark:hover {
 .invisible {
   visibility: hidden !important; }
 html {
-  font-family: 'Montserrat', sans-serif;
-  background-image: url("https://ak6.picdn.net/shutterstock/videos/11816366/thumb/4.jpg");
-  background-size: cover; }
+  font-family: 'Montserrat', sans-serif; }
 body {
   margin: 0;
   background: #8f8f8f; }
