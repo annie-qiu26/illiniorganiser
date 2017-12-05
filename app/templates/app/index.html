@@ -1,0 +1,17 @@
+{% extends 'app/base.html' %}
+
+{% block title %} Main Page {% endblock %}
+
+{% load staticfiles %}
+
+{% block content %}
+    {% for tag in tags %}
+        <div class="card" style="width: 20rem;">
+            <img class="card-img-top" alt="{{ tag.name }} logo">
+            <div class="content">
+                <a class="card-title" href="{% url 'rso' tag.id %}"> {{ tag.name }}</a>
+                <p class="card-text">rawr</p>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}

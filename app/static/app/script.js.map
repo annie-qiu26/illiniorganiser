@@ -1,0 +1,1 @@
+{"version":3,"sources":["../app-src/js/script.js"],"names":[],"mappings":"AAAA,OAAO,SAAP,MAAsB,WAAtB;;AAEA,IAAI,IAAI,EAAR;AACA,IAAI,IAAI,CAAR;;AAEA,OAAO,KAAP,CAAa,SAAb","file":"script.js","sourcesContent":["import Bootstrap from 'bootstrap'\n\nvar a = 10;\nvar b = 3;\n\nwindow.alert(Bootstrap);"]}

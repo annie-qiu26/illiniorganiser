@@ -11,11 +11,11 @@ verify_ssl = true
 
 [packages]
 
-django = "==1.11.6"
+Django = "==1.11.6"
 "html2text" = "==2017.10.4"
 nltk = "==3.2.5"
 olefile = "==0.44"
-pillow = "==4.3.0"
+Pillow = "==4.3.0"
 pytz = "==2017.2"
 rake-nltk = "==1.0.1"
 gunicorn = "*"
