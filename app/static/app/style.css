@@ -5515,48 +5515,6 @@ a.text-dark:focus, a.text-dark:hover {
   visibility: visible !important; }
 .invisible {
   visibility: hidden !important; }
-html {
-  font-family: 'Montserrat', sans-serif; }
-body {
-  margin: 0;
-  background: #8f8f8f; }
-header {
-  background: black;
-  color: white;
-  padding: 8px 0px 6px 40px;
-  height: 85px;
-  margin-bottom: 30px; }
-header h1 {
-  display: inline;
-  color: white;
-  font-weight: 400;
-  font-size: 50px;
-  float: left;
-  margin-top: 0px;
-  margin-right: 10px; }
-nav ul {
-  display: inline;
-  padding: 8px;
-  float: left; }
-nav ul li {
-    display: inline-block;
-    list-style-type: none;
-    font-size: 30px;
-    margin-top: 15px;
-    margin-left: 0px;
-    color: white;
-    float: left; }
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    margin-left: -15px;
-    margin-right: 20px; }
-nav ul li a:hover {
-    color: gold;
-    font-weight: bold;
-    text-decoration: none; }
-#nav {
-  font-family: sans-serif; }
 .menu-icon {
   position: fixed;
   top: 20px;

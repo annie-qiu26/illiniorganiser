@@ -56,13 +56,13 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
-	"\/app\/static\/app\/images\/img-placeholder.png": {
+	"\/app\/static\/app\/images\/placeholder.png": {
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 8081,
-		"inputAbbreviatedPath": "\/app\/static\/app\/images\/img-placeholder.png",
-		"outputAbbreviatedPath": "\/app\/static\/app\/images\/img-placeholder.png",
+		"inputAbbreviatedPath": "\/app\/static\/app\/images\/placeholder.png",
+		"outputAbbreviatedPath": "\/app\/static\/app\/images\/placeholder.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0

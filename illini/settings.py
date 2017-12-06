@@ -99,6 +99,10 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# User Model
+
+AUTH_USER_MODEL = 'app.MyUser'
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/

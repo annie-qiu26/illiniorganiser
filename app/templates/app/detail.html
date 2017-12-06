@@ -2,8 +2,19 @@
 
 {% block title %} {{ organization.name }} {% endblock %}
 
+{% load static %}
+
 {% block content %}
+    {% include 'app/navbar.html' %}
+    {% include 'app/sidebar.html' %}
     <div class="container-fluid">
-         {{ organization.name }}
+        <img style="max-height: 400px;" src="{% static 'app/images/placeholder.png' %}" alt="">
+    </div>
+    <div class="container">
+        {% for tag in tags %}
+            <a href="{% url 'rso' tag.id %}">{{ tag.name }}</a>
+        {% endfor %}
+        <h1>{{ organization.name }}</h1>
+        <p>{{ organization.description }}</p>
     </div>
 {% endblock %}
