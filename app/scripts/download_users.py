@@ -9,13 +9,12 @@
 from urllib import request
 import json
 import pprint
-from app.models import Organization, OrganizationPosition
-from django.contrib.auth.models import User
+from app.models import Organization, OrganizationPosition, MyUser
 
 
-DRY_RUN = True  # dry runs print would-be changes without saving them
+DRY_RUN = False  # dry runs print would-be changes without saving them
 DOWNLOAD_ALL = False  # true for production, false for testing when you don't want to download everything
-ORGS_RANGE = range(50, 60)  # if DOWNLOAD_ALL is false, only pull this many orgs
+ORGS_RANGE = range(0, 100)  # if DOWNLOAD_ALL is false, only pull from this many orgs
 
 pp = pprint.PrettyPrinter()
 URL_BASE = 'https://illinois.campuslabs.com/engage/api/discovery/organization/'
@@ -46,40 +45,52 @@ with open('app/scripts/organizations.json', encoding='utf8') as file:
         print('=' * len(str(organization)))
 
         for position_data in positions:
-            position_type = 'M'
-            type_name = position_data['typeName']
-            if type_name == 'Student Organization Advisor':
-                position_type = 'F'
-            elif type_name == 'Student Organization Officer' or type_name == 'Primary Contact':
-                position_type = 'A'
-            elif type_name == 'Member / Participant':
-                position_type = 'M'
-            else:
-                print('Weird position type:')
-                print('*'*20)
-                pp.pprint(position)
-                print('*'*20)
-            position = OrganizationPosition(name=position_data['name'].strip(),
-                                            type=position_type,
-                                            organization=organization
-                                            )
 
-            positions_count += 1
-            print('Added position:', position, 'of type:', position_type)
+            if position_data['holders']:
 
-            if not DRY_RUN:
-                position.save()
+                type_name = position_data['typeName']
+                if type_name == 'Student Organization Advisor':
+                    position_type = 'F'
+                elif type_name == 'Student Organization Officer' or type_name == 'Primary Contact':
+                    position_type = 'A'
+                elif type_name == 'Member / Participant':
+                    position_type = 'M'
+                else:
+                    print('Weird position type:')
+                    print('*'*20)
+                    pp.pprint(position)
+                    print('*'*20)
+                    break
 
-            for holder in position_data['holders']:
-                user = User(username=holder['primaryEmailAddress'].lower(),
-                            first_name=holder['firstName'],
-                            last_name=holder['lastName']
-                            )
-                users_count += 1
-                print('  Added user:', user)
+                position = OrganizationPosition(name=position_data['name'].strip(),
+                                                type=position_type,
+                                                organization=organization
+                                                )
+
+                positions_count += 1
+                print('Added position: {} of type: {}'.format(position, position_type))
 
                 if not DRY_RUN:
-                    user.save()
+                    position.save()
+
+                for holder in position_data['holders']:
+                    user, created = MyUser.objects.get_or_create(email=holder['primaryEmailAddress'].lower())
+                    if created:
+                        user.first_name = holder['firstName']
+                        user.last_name = holder['lastName']
+                        user.claimed = False
+                        users_count += 1
+                        print('\t Added user: {}'.format(user))
+
+                        if not DRY_RUN:
+                            user.save()
+                            position.holders.add(user)
+                    else:
+                        if not DRY_RUN:
+                            position.holders.add(user)
+
 
     print()
-    print('Succesfully downloaded {} users in {} positions for {} organizations'.format(users_count, positions_count, organizations_count))
+    print('Successfully downloaded {} users in {} positions for {} organizations'.format(users_count,
+                                                                                         positions_count,
+                                                                                         organizations_count))

@@ -18,6 +18,10 @@ def rso(request, tag_id):
 
 def detail(request, organization_id):
     organization = get_object_or_404(Organization, pk=organization_id)
+    positions = organization.organizationposition_set.all()
+    print({p.name: p.holders.all() for p in positions})
     return render(request, 'app/detail.html', {'organization': organization,
-                                               'tags': organization.tags.all()})
+                                               'tags': organization.tags.all(),
+                                               'users': {p.name: p.holders.all() for p in positions}
+                                               })
 

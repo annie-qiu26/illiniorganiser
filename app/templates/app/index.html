@@ -42,7 +42,7 @@
                     <div class="card">
                         <img src="{% static 'app/images/placeholder.png' %}" alt="" class="card-img-top">
                         <div class="card-body">
-                            <h5 class="card-title">{{ org.name }}</h5>
+                            <a href="{% url 'detail' org.id %}"><h5 class="card-title">{{ org.name }}</h5></a>
                         </div>
                     </div>
                 </div>
@@ -55,7 +55,7 @@
                     <div class="card">
                         <img src="{% static 'app/images/placeholder.png' %}" alt="" class="card-img-top">
                         <div class="card-body">
-                            <h5 class="card-title">{{ org.name }}</h5>
+                            <a href="{% url 'detail' org.id %}"><h5 class="card-title">{{ org.name }}</h5></a>
                         </div>
                     </div>
                 </div>
@@ -68,7 +68,7 @@
                     <div class="card">
                         <img src="{% static 'app/images/placeholder.png' %}" alt="" class="card-img-top">
                         <div class="card-body">
-                            <h5 class="card-title">{{ org.name }}</h5>
+                            <a href="{% url 'detail' org.id %}"><h5 class="card-title">{{ org.name }}</h5></a>
                         </div>
                     </div>
                 </div>

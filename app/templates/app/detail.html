@@ -16,5 +16,20 @@
         {% endfor %}
         <h1>{{ organization.name }}</h1>
         <p>{{ organization.description }}</p>
+        <div class="row">
+            {% for position, holders in users.items %}
+                {% for user in holders %}
+                    <div class="col-3">
+                        <div class="card">
+                            <img src="{% static 'app/images/placeholder.png' %}" alt="" class="card-img-top">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ user.get_full_name }}</h5>
+                                <p class="card-text">{{ position }}</p>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% endfor %}
+        </div>
     </div>
 {% endblock %}

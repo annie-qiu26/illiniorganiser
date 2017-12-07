@@ -66,6 +66,11 @@ class MyUser(AbstractBaseUser, PermissionsMixin):
         ),
     )
     date_joined = models.DateTimeField(_('date joined'), default=timezone.now)
+    claimed = models.BooleanField(
+        _('claimed'),
+        default=True,
+        help_text=_('Designates whether a real person has claimed this account.')
+    )
 
     objects = MyUserManager()
 
@@ -148,6 +153,7 @@ class OrganizationPosition(models.Model):
     type = models.CharField(_('position type'), max_length=1, choices=POSITION_TYPES, default='M')
     description = models.CharField(_('position description'), max_length=256, null=True, blank=True)
     organization = models.ForeignKey(Organization, on_delete=models.CASCADE)
+    holders = models.ManyToManyField('MyUser', blank=True)
 
     def __str__(self):
         return self.name

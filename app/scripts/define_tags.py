@@ -3,7 +3,6 @@
 # is simply a prerequisite for a tag. For example,
 # Academic is a parent of Chemistry because
 # all chemistry clubs are academic.
-# Parents aren't stored in the database; they're only for this script.
 
 from app.models import *
 
