@@ -162,6 +162,7 @@ Science < academic
 Chemistry < academic
 Leadership < academic
 Agriculture < academic
+Agronomy < agriculture, academic
 Advertising < academic
 Aeronautics < academic
 Engineering < academic
@@ -238,3 +239,5 @@ Residence hall
 Equality < political
 ROTC
 STEM < academic
+Social fraternity < greek life
+sorority < greek life, all-women

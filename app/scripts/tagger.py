@@ -25,7 +25,7 @@ for org in orgs:
         org.tags.clear()
         print('Removed all tags')
 
-    text = org.name + '. ' + org.summary + ' ' + org.description
+    text = "{}. {}. {} {}".format(org.name, org.category_name, org.summary, org.description)
     r.extract_keywords_from_text(text)
 
     print('')

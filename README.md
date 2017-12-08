@@ -10,7 +10,7 @@ Go to [this link](https://www.jetbrains.com/student/) and sign up with your illi
 **Framework**: [Django](https://www.djangoproject.com) is a modern Python Web framework that makes web development cool.
 Try and go through [this guide](https://docs.djangoproject.com/en/1.11/intro/tutorial01/) to understand how Django works.
 
-**Frontend**: [Bootstrap 4](https://getbootstrap.com/docs/3.3/components/) is a popular front-end framework. Before inventing a new UI element, check if it already exists in Bootstrap. For styling, we use [SCSS](http://sass-lang.com/guide), a pre-compiled superset of CSS. For scripting, we use [ECMAScript 6](http://es6-features.org), the latest standard for Javascript (which isn't completely supported by all browsers, so our ES6 gets pre-compiled into ES5 via Babel).
+**Frontend**: [Bootstrap 4](https://getbootstrap.com/docs/3.3/components/) is a popular front-end framework. Before inventing a new UI element, check if it already exists in Bootstrap. For styling, we use [SCSS](http://sass-lang.com/guide), a pre-compiled superset of CSS that all the pros use nowadays. For scripting, we use [ECMAScript 6](http://es6-features.org), the latest standard for Javascript (which isn't completely supported by all browsers, so our ES6 gets pre-compiled into ES5 via [Babel](https://babeljs.io)).
 
 ## Setup
 
@@ -26,7 +26,7 @@ Packages are all the third party Python modules we need to run our app, such as 
 
 ### Running Django
 
-Once you have installed the packages with Pipenv, run these commands to get the server going:
+Once you have installed the packages with Pipenv, run these commands to get the server going:`
 
 1. `python manage.py makemigrations`
 2. `python manage.py migrate`
@@ -44,7 +44,7 @@ Nothing will appear on the webapp the first time you open it because there's no 
 3. Reload the [web app](http://127.0.0.1:8000/).
 4. You can click on the name of the RSO which will send you to a "detail" page of the organization. (The link is working if a webpage with just the name of the RSO appears).
 
-Creating all of the organizations and other data manually would take forever, so I wrote some scripts in `app/scripts/` to generate all of the initial data automatically. Check out their comments to understand how they work. To run a script, type `execfile('app/scripts/script_name.py')` into PyCharm's Django console.
+Creating all of the organizations and other data manually would take forever, so I wrote some scripts in `app/scripts/` to generate all of the initial data automatically. Check out their comments to understand how they work. To run a script, type `execfile('app/scripts/SCRIPT_NAME.py')` into PyCharm's Django console, replacing `SCRIPT_NAME` with the name of the script. If you can't find the Django console, start it by typing `python manage.py shell`.
 
 ### Frontend workflow
 

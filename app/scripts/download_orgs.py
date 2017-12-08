@@ -12,12 +12,17 @@ import html2text
 
 DRY_RUN = False  # dry runs print would-be changes without saving them
 DOWNLOAD_ALL = False  # true for production, false for testing when you don't want to download everything
-ORGS_RANGE = range(0, 100)  # if DOWNLOAD_ALL is false, only pull this range of organizations
-VERBOSE = False  # print details of each organization
+ORGS_RANGE = range(0, 50)  # if DOWNLOAD_ALL is false, only pull this range of organizations
+VERBOSE = True  # print details of each organization
+RESET = False  # delete all existing organizations before starting
 
 pp = pprint.PrettyPrinter()
 URL_BASE = 'https://illinois.campuslabs.com/engage/api/discovery/organization/bykey/'
 with open('app/scripts/organizations.json', encoding='utf8') as file:
+
+    if RESET:
+        Organization.objects.all().delete()
+        print('Deleted all organizations')
 
     organizations = json.load(file)
 
@@ -49,7 +54,8 @@ with open('app/scripts/organizations.json', encoding='utf8') as file:
                                       is_public=True,
                                       email=org_data['email'],
                                       last_modified=org_data['modifiedOn'],
-                                      is_deleted=org_data['deleted']
+                                      is_deleted=org_data['deleted'],
+                                      category_name=org_brief_data['CategoryNames'][0]
                                       )
             if not DRY_RUN:
                 org_object.save()
