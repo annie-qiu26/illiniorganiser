@@ -4,10 +4,10 @@ from .models import *
 
 def index(request):
     return render(request, 'app/index.html', {'tags': Tag.objects.filter(breadth='B')[:8],
-                                              'academic_orgs': Organization.objects.filter(tags__name='Academic')[:4],
-                                              'fun_orgs': Organization.objects.filter(tags__name='Fun')[:4],
-                                              'greek_orgs': Organization.objects.filter(tags__name='Greek Life')[:4],
-                                              'sports_orgs': Organization.objects.filter(tags__name='Sports')[:4]
+                                              'academic_orgs': Organization.objects.filter(tags__name='Academic')[:9],
+                                              'fun_orgs': Organization.objects.filter(tags__name='Fun')[:9],
+                                              'greek_orgs': Organization.objects.filter(tags__name='Greek Life')[:9],
+                                              'sports_orgs': Organization.objects.filter(tags__name='Sports')[:9]
                                               })
 
 

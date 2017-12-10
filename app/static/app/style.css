@@ -5578,3 +5578,35 @@ a.text-dark:focus, a.text-dark:hover {
           transform: rotate(-45deg); }
 .menu-icon.active span:nth-child(2) {
   display: none; }
+nav {
+  background-color: #fff15f; }
+* {
+  font-family: "Corbel"; }
+#rsopix {
+  padding: 20px; }
+h2 {
+  padding-top: 20px; }
+h3 {
+  padding-top: 20px; }
+.card-body {
+  text-align: center; }
+.rounded-circle {
+  height: 100px;
+  width: 100px; }
+#circleBox {
+  margin-top: 10px;
+  text-align: center; }
+#rsodetails {
+  padding-top: 20px; }
+.nav-item {
+  font-weight: bold; }
+#organizations {
+  margin-top: 15px; }
+.card {
+  margin-top: 10px;
+  margin-bottom: 15px; }
+.slick-prev:before, .slick-next:before {
+  color: #ffe339 !important; }
+#tagTitles {
+  color: black;
+  text-decoration: none; }

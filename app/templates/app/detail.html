@@ -8,9 +8,9 @@
     {% include 'app/navbar.html' %}
     {% include 'app/sidebar.html' %}
     <div class="container-fluid">
-        <img style="max-height: 400px;" src="{% static 'app/images/placeholder.png' %}" alt="">
+        <img class="img-fluid rounded float-left" id = "rsopix" style="max-height: 500px;" src="{% static 'app/images/placeholder.png' %}" alt="">
     </div>
-    <div class="container">
+    <div class="container" id = "rsodetails">
         {% for tag in tags %}
             <a href="{% url 'rso' tag.id %}">{{ tag.name }}</a>
         {% endfor %}
@@ -19,7 +19,7 @@
         <div class="row">
             {% for position, holders in users.items %}
                 {% for user in holders %}
-                    <div class="col-3">
+                    <div class="col-md-3">
                         <div class="card">
                             <img src="{% static 'app/images/placeholder.png' %}" alt="" class="card-img-top">
                             <div class="card-body">
