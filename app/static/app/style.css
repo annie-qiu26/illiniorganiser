@@ -5582,6 +5582,8 @@ nav {
   background-color: #fff15f; }
 * {
   font-family: 'Nunito', sans-serif; }
+.space {
+  height: 30px; }
 #rsopix {
   padding: 20px; }
 h2 {
@@ -5610,9 +5612,9 @@ h3 {
   margin-top: 15px; }
 .card {
   margin-top: 10px;
-  margin-bottom: 15px; }
+  margin-bottom: 10px; }
 .slick-prev:before, .slick-next:before {
-  color: #ffe339 !important; }
+  color: #fff15f !important; }
 .tag-title {
   color: black !important;
   text-decoration: none; }
