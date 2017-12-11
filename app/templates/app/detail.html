@@ -8,7 +8,11 @@
     {% include 'app/navbar.html' %}
     {% include 'app/sidebar.html' %}
     <div class="container-fluid">
-        <img class="img-fluid rounded float-left" id = "rsopix" style="max-height: 500px;" src="{% static 'app/images/placeholder.png' %}" alt="">
+        {% if organization.get_cover %}
+            <img class="img-fluid rounded float-left" id = "rsopix" style="max-height: 500px;" src="{{ organization.get_cover.image.url }}" alt="">
+        {% else %}
+            <img class="img-fluid rounded float-left" id = "rsopix" style="max-height: 500px;" src="{% static 'app/images/placeholder.png' %}" alt="">
+        {% endif %}
     </div>
     <div class="container" id = "rsodetails">
         {% for tag in tags %}

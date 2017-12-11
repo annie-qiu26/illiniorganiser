@@ -10,7 +10,7 @@ import pprint
 
 
 MIN_RELEVANCE = 2  # minimum RAKE relevance score for a keyword to be considered
-DRY_RUN = True  # dry runs print would-be changes without saving them
+DRY_RUN = False  # dry runs print would-be changes without saving them
 RESET = True  # remove existing associations with tags before starting
 
 

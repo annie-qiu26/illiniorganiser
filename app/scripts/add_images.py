@@ -13,7 +13,7 @@ from app.models import Tag, Organization, OrganizationPhoto
 
 
 DRY_RUN = False  # dry runs print would-be changes without saving them
-RESET = False
+RESET = True
 
 BASE_PATH = '../illiniorganizer-pictures'
 TAGS_PATH = join(BASE_PATH, 'tag-photos')

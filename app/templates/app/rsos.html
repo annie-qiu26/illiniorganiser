@@ -11,7 +11,11 @@
         <div class="card-columns">
             {% for org in organizations %}
                 <div class="card" id = "organizations">
-                    <img src="{% static 'app/images/placeholder.png' %}" alt="" class="card-img-top">
+                    {% if org.get_cover %}
+                        <img src="{{ org.get_cover.image.url }}" alt="" class="card-img-top org-thumbnail">
+                    {% else %}
+                        <img src="{% static 'app/images/placeholder.png' %}" alt="" class="card-img-top org-thumbnail">
+                    {% endif %}
                     <div class="card-body">
                         <a href="{% url 'detail' org.id %}"><h5 class="card-title">{{ org.name }}</h5></a>
                         <p class="card-text">{{ org.summary }}</p>
