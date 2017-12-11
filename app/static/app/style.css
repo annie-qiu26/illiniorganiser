@@ -5581,7 +5581,7 @@ a.text-dark:focus, a.text-dark:hover {
 nav {
   background-color: #fff15f; }
 * {
-  font-family: "Corbel"; }
+  font-family: 'Nunito', sans-serif; }
 #rsopix {
   padding: 20px; }
 h2 {
@@ -5600,6 +5600,12 @@ h3 {
   padding-top: 20px; }
 .nav-item {
   font-weight: bold; }
+.mr-auto {
+  margin-right: 0 !important; }
+.navbar-toggleable-md .navbar-collapse {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end; }
 #organizations {
   margin-top: 15px; }
 .card {

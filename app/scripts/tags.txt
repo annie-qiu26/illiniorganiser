@@ -11,7 +11,6 @@ Political < academic
 Religious
 Government < academic
 Arts
-Cricket < sports
 Social
 Cultural
 All-women
@@ -35,11 +34,17 @@ Bangladeshi < cultural
 Filipino < cultural
 Bengali < cultural
 Yoga < sports
+Cricket < sports
 Ballet < sports, dance
 Assyrian < cultural
 Chorus < arts, music
 A capella < chorus
+Equine < fun
+Ballista < academic
+Taekwondo < sports
+Sneakerhead < social
 Brazilian < cultural
+Public relations < academic
 Dance < sports, fun
 Chinese < cultural
 Minority < cultural
@@ -94,10 +99,15 @@ Cinema < fun
 Latin < cultural
 Yearbook
 Book < academic
-Camp < fun
-
+Camp
+Energize < social
+kindness < philanthropy
+Rodeo < sports
 Council < academic
 Western < cultural
+Optometry < academic
+Pharmacy < academic
+Hearthstone < games, social
 Drawing < arts
 Band < music
 Muslim < cultural, religious
