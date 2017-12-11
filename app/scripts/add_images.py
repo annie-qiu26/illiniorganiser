@@ -3,7 +3,7 @@
 
 from PIL import Image
 from os import listdir
-from os.path import join, isdir
+from os.path import join, isdir, pardir
 from termcolor import cprint
 
 from django.db.models import Q
@@ -15,7 +15,7 @@ from app.models import Tag, Organization, OrganizationPhoto
 DRY_RUN = False  # dry runs print would-be changes without saving them
 RESET = True
 
-BASE_PATH = '../illiniorganizer-pictures'
+BASE_PATH = join(pardir, 'illiniorganizer-pictures')
 TAGS_PATH = join(BASE_PATH, 'tag-photos')
 ORGS_PATH = join(BASE_PATH, 'organization-photos')
 
