@@ -12,7 +12,7 @@ import html2text
 
 DRY_RUN = False  # dry runs print would-be changes without saving them
 DOWNLOAD_ALL = False  # true for production, false for testing when you don't want to download everything
-ORGS_RANGE = range(100, 300)  # if DOWNLOAD_ALL is false, only pull this range of organizations
+ORGS_RANGE = range(0, 50)  # if DOWNLOAD_ALL is false, only pull this range of organizations
 VERBOSE = True  # print details of each organization
 RESET = True  # delete all existing organizations before starting
 
@@ -21,7 +21,8 @@ URL_BASE = 'https://illinois.campuslabs.com/engage/api/discovery/organization/by
 with open('app/scripts/organizations.json', encoding='utf8') as file:
 
     if RESET:
-        Organization.objects.all().delete()
+        if not DRY_RUN:
+            Organization.objects.all().delete()
         print('Deleted all organizations')
 
     organizations = json.load(file)
@@ -46,6 +47,16 @@ with open('app/scripts/organizations.json', encoding='utf8') as file:
             else:
                 print('Successfully downloaded: {}'.format(org_data['name']))
 
+            website_url = None
+            links = org_data['socialMedia']
+            if links['ExternalWebsite']:
+                website_url = links['ExternalWebsite']
+            else:
+                for url_type, url in links.items():
+                    if 'Url' in url_type and url:
+                        website_url = url
+                        break
+
             org_object = Organization(name=org_data['name'],
                                       abbr=(org_data['shortName'] if org_data['shortName'] else None),
                                       found_date=org_data['startDate'],
@@ -55,7 +66,8 @@ with open('app/scripts/organizations.json', encoding='utf8') as file:
                                       email=org_data['email'],
                                       last_modified=org_data['modifiedOn'],
                                       is_deleted=org_data['deleted'],
-                                      category_name=org_brief_data['CategoryNames'][0]
+                                      category_name=org_brief_data['CategoryNames'][0],
+                                      website_url=website_url
                                       )
             if not DRY_RUN:
                 org_object.save()

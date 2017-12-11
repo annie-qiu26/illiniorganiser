@@ -29,7 +29,8 @@ for org in orgs:
     print('-' * len(org.name))
 
     if RESET:
-        org.tags.clear()
+        if not DRY_RUN:
+            org.tags.clear()
         print('Removed all tags')
 
     keywords_string = ' '.join([item[1] for item in

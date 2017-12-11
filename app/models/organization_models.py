@@ -44,6 +44,7 @@ class Organization(models.Model):
     last_modified = models.DateTimeField(_('last modified'), null=True, blank=True, auto_now_add=True)
     is_deleted = models.BooleanField(_('deleted'), default=False)
     category_name = models.CharField(_('category name'), max_length=64, blank=True)
+    website_url = models.URLField(_('website url'), null=True, blank=True)
 
     def get_cover(self):
         try:

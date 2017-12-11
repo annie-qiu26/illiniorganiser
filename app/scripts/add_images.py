@@ -49,10 +49,15 @@ for category_dir in [d for d in listdir(ORGS_PATH) if isdir(join(ORGS_PATH, d))]
                 print('Organization already has photos: {}'.format(org))
             else:
                 for file_name in listdir(join(ORGS_PATH, category_dir, org_dir)):
-                    img = OrganizationPhoto(organization=org, is_cover=('cover' in file_name or 'group' in file_name))
-                    if not DRY_RUN:
-                        img.image.save(file_name, File(open(join(ORGS_PATH, category_dir, org_dir, file_name), 'rb')))
-                    cprint('Saved photo: {}'.format(file_name), 'green')
+                    if 'logo' in file_name:
+                        if not DRY_RUN:
+                            org.logo.save(file_name, File(open(join(ORGS_PATH, category_dir, org_dir, file_name), 'rb')))
+                            cprint('Saved logo: {}'.format(file_name), 'green')
+                    else:
+                        img = OrganizationPhoto(organization=org, is_cover=('cover' in file_name or 'group' in file_name))
+                        if not DRY_RUN:
+                            img.image.save(file_name, File(open(join(ORGS_PATH, category_dir, org_dir, file_name), 'rb')))
+                        cprint('Saved photo: {}'.format(file_name), 'green')
         except Organization.DoesNotExist:
             cprint('No organization contains query: {}'.format(query), 'red')
         except Organization.MultipleObjectsReturned:
