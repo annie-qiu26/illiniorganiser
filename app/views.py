@@ -1,5 +1,6 @@
 from django.db.models import Q
 from django.shortcuts import render, get_object_or_404
+from django.db.models import Count
 from .models import *
 
 
@@ -12,10 +13,31 @@ def index(request):
                                              Q(tags__name__contains=query)).distinct()
 
     context = {'tags': Tag.objects.filter(breadth='B')[:8],
-               'academic_orgs': Organization.objects.filter(tags__name='Academic')[:9],
-               'fun_orgs': Organization.objects.filter(tags__name='Fun')[:9],
-               'greek_orgs': Organization.objects.filter(tags__name='Greek Life')[:9],
-               'sports_orgs': Organization.objects.filter(tags__name='Sports')[:9]
+               'organizations': [
+                   {'name': 'Academic',
+                    'orgs': Organization.objects.filter(tags__name='Academic')
+                            .annotate(num_photos=Count('organizationphoto'))
+                            .order_by('-num_photos')[:9],
+                    },
+                   {'name': 'Fun',
+                    'orgs': Organization.objects.filter(tags__name='Fun')
+                            .annotate(num_photos=Count('organizationphoto'))
+                            .order_by('-num_photos')[:9]
+                       ,
+                    },
+                   {'name': 'Greek Life',
+                    'orgs': Organization.objects.filter(tags__name='Greek Life')
+                            .annotate(num_photos=Count('organizationphoto'))
+                            .order_by('-num_photos')[:9]
+                       ,
+                    },
+                   {'name': 'Sports',
+                    'orgs': Organization.objects.filter(tags__name='Sports')
+                            .annotate(num_photos=Count('organizationphoto'))
+                            .order_by('-num_photos')[:9]
+                       ,
+                    }
+               ]
                }
 
     return render(request, 'app/index.html', context)

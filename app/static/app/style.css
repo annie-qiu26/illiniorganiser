@@ -5607,6 +5607,10 @@ h3 {
   margin-bottom: 15px; }
 .slick-prev:before, .slick-next:before {
   color: #ffe339 !important; }
-#tagTitles {
-  color: black;
+.tag-title {
+  color: black !important;
   text-decoration: none; }
+.org-thumbnail {
+  height: 250px;
+  -o-object-fit: cover;
+     object-fit: cover; }

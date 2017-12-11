@@ -54,7 +54,12 @@ h3 {
     color: #ffe339 !important;
 }
 
-#tagTitles {
-  color: black;
+.tag-title {
+  color: black !important;
   text-decoration: none;
+}
+
+.org-thumbnail {
+  height: 250px;
+  object-fit: cover;
 }

@@ -12,10 +12,9 @@ Religious
 Student Government < academic
 Arts
 Cultural
-All-women
+All women
 Philanthropy
 Graduate
-Other
 
 Niche:
 African American < cultural
@@ -240,4 +239,4 @@ Equality < political
 ROTC
 STEM < academic
 Social fraternity < greek life
-sorority < greek life, all-women
+sorority < greek life, all women

@@ -11,7 +11,7 @@ import pprint
 
 MIN_RELEVANCE = 2  # minimum RAKE relevance score for a keyword to be considered
 DRY_RUN = True  # dry runs print would-be changes without saving them
-RESET = False  # remove existing associations with tags before starting
+RESET = True  # remove existing associations with tags before starting
 
 
 r = Rake()
@@ -21,16 +21,16 @@ orgs = list(Organization.objects.all())
 tags = list(Tag.objects.all())
 
 for org in orgs:
-    if RESET:
-        org.tags.clear()
-        print('Removed all tags')
 
     text = "{}. {}. {} {}".format(org.name, org.category_name, org.summary, org.description)
     r.extract_keywords_from_text(text)
 
-    print('')
     print(org.name)
     print('-' * len(org.name))
+
+    if RESET:
+        org.tags.clear()
+        print('Removed all tags')
 
     keywords_string = ' '.join([item[1] for item in
                                 filter(lambda a: a[0] >= MIN_RELEVANCE, r.get_ranked_phrases_with_scores())])
@@ -46,3 +46,5 @@ for org in orgs:
 
     if not DRY_RUN:
         org.save()
+
+    print('')

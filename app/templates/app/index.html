@@ -14,7 +14,11 @@
                 <div class="col-md-2">
                     <div class="container">
                         <div id = circleBox>
-                            <img class = "rounded-circle" src="{% static 'app/images/placeholder.png' %}" class="card-img-top" alt="{{ tag.name }} logo">
+                            {% if tag.image %}
+                                <img class = "rounded-circle" src="{{ tag.image.url }}" class="card-img-top" alt="{{ tag.name }} logo">
+                            {% else %}
+                                <img class = "rounded-circle" src="{% static 'app/images/placeholder.png' %}" class="card-img-top" alt="{{ tag.name }} logo">
+                            {% endif %}
                         </div>
                         <div class="card-body">
                             <h5 style = "text-align: center"><a class="card-text" href="{% url 'rso' tag.id %}"> {{ tag.name }}</a></h5>
@@ -25,58 +29,25 @@
         </div>
     </div>
     <div class="container">
-        <h3><a class="card-text" id = "tagTitles" href="{% url 'rso' 289 %}"> Academic </a></h3>
-        <div class="slider responsive">
-            {% for org in academic_orgs %}
-                <div class="col-md-3">
-                    <div class="card">
-                        <img src="{% static 'app/images/placeholder.png' %}" alt="" class="card-img-top">
-                        <div class="card-body">
-                            <a href="{% url 'detail' org.id %}"><h5 class="card-title">{{ org.name }}</h5></a>
+        {% for tag in organizations %}
+            <h3>{{ tag.name }}</h3>
+            <div class="slider responsive">
+                {% for org in tag.orgs %}
+                    <div class="col-md-3">
+                        <div class="card">
+                            {% if org.get_cover %}
+                                <img src="{{org.get_cover.image.url}}" class="card-img-top org-thumbnail" alt="thumbnail">
+                            {% else %}
+                                <img src="{% static 'app/images/placeholder.png' %}" alt="thumbnail" class="card-img-top org-thumbnail">
+                            {% endif %}
+                            <div class="card-body">
+                                <a href="{% url 'detail' org.id %}"><h5 class="card-title">{{ org.name }}</h5></a>
+                            </div>
                         </div>
                     </div>
-                </div>
-            {% endfor %}
-        </div>
-        <h3><a class="card-text" id = "tagTitles" href="{% url 'rso' 290 %}"> Fun </a></h3>
-        <div class="slider responsive">
-            {% for org in fun_orgs %}
-                <div class="col-md-3">
-                    <div class="card">
-                        <img src="{% static 'app/images/placeholder.png' %}" alt="" class="card-img-top">
-                        <div class="card-body">
-                            <a href="{% url 'detail' org.id %}"><h5 class="card-title">{{ org.name }}</h5></a>
-                        </div>
-                    </div>
-                </div>
-            {% endfor %}
-        </div>
-        <h3><a class="card-text" id = "tagTitles" href="{% url 'rso' 292 %}"> Greek </a></h3>
-        <div class="slider responsive">
-            {% for org in greek_orgs %}
-                <div class="col-md-3">
-                    <div class="card">
-                        <img src="{% static 'app/images/placeholder.png' %}" alt="" class="card-img-top">
-                        <div class="card-body">
-                            <a href="{% url 'detail' org.id %}"><h5 class="card-title">{{ org.name }}</h5></a>
-                        </div>
-                    </div>
-                </div>
-            {% endfor %}
-        </div>
-        <h3><a class="card-text" id = "tagTitles" href="{% url 'rso' 291 %}"> Sports </a></h3>
-        <div class="slider responsive">
-            {% for org in sports_orgs %}
-                <div class="col-md-3">
-                    <div class="card">
-                        <img src="{% static 'app/images/placeholder.png' %}" alt="" class="card-img-top">
-                        <div class="card-body">
-                            <a href="{% url 'detail' org.id %}"><h5 class="card-title">{{ org.name }}</h5></a>
-                        </div>
-                    </div>
-                </div>
-            {% endfor %}
-        </div>
+                {% endfor %}
+            </div>
+        {% endfor %}
     </div>
 
 {% endblock %}
