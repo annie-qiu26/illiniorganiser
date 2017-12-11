@@ -14,7 +14,7 @@ DRY_RUN = False  # dry runs print would-be changes without saving them
 DOWNLOAD_ALL = False  # true for production, false for testing when you don't want to download everything
 ORGS_RANGE = range(100, 300)  # if DOWNLOAD_ALL is false, only pull this range of organizations
 VERBOSE = True  # print details of each organization
-RESET = False  # delete all existing organizations before starting
+RESET = True  # delete all existing organizations before starting
 
 pp = pprint.PrettyPrinter()
 URL_BASE = 'https://illinois.campuslabs.com/engage/api/discovery/organization/bykey/'

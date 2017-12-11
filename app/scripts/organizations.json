@@ -4575,7 +4575,7 @@
       "WebsiteKey": "combotics2",
       "ProfilePicture": null,
       "Description": null,
-      "Summary": "A team for sophomores interested in building battle-bots",
+      "Summary": "A team for sophomores interested in building battle-bots. We build robots whose primary function is to destroy other robots.",
       "CategoryIds": [
         "1767"
       ],
@@ -4595,7 +4595,7 @@
       "WebsiteKey": "combotics_2021",
       "ProfilePicture": null,
       "Description": null,
-      "Summary": "Combotics team for students graduating in 2021.",
+      "Summary": "Combotics team for students graduating in 2021. We build robots whose primary function is to destroy other robots.",
       "CategoryIds": [
         "1767"
       ],
@@ -4615,7 +4615,7 @@
       "WebsiteKey": "Junior_combotics",
       "ProfilePicture": null,
       "Description": null,
-      "Summary": "The Junior Team competing in the Combotics RoboBrawl.",
+      "Summary": "The Junior Team competing in the Combotics RoboBrawl. We build robots whose primary function is to destroy other robots.",
       "CategoryIds": [
         "1767"
       ],
@@ -5114,8 +5114,8 @@
       "ShortName": "Cross-Country Club",
       "WebsiteKey": "crosscountryclub",
       "ProfilePicture": "6257fdad-0c2c-4a24-8e0a-91917a513c8eded33bf4-6fdd-4d56-aacf-a3e37416218e.png",
-      "Description": "<p>To give runners a group to train with and opportunities to race during cross country, indoor, and outdoor season. The cross county season includes a club regional and national meet.</p>",
-      "Summary": "To give runners a group to train with and opportunities to race during cross country, indoor, and outdoor season. The cross county season includes a club regional and national meet.",
+      "Description": "<p>To give runners a group to train with and opportunities to race during cross-country, indoor, and outdoor season. The cross-country season includes a club regional and national meet.</p>",
+      "Summary": "To give runners a group to train with and opportunities to race during cross-country, indoor, and outdoor season. The cross-country season includes a club regional and national meet.",
       "CategoryIds": [
         "1768"
       ],
