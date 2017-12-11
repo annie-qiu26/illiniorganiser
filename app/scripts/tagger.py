@@ -31,7 +31,6 @@ for org in orgs:
     print('')
     print(org.name)
     print('-' * len(org.name))
-
     keywords_string = ' '.join([item[1] for item in
                                 filter(lambda a: a[0] >= MIN_RELEVANCE, r.get_ranked_phrases_with_scores())])
 

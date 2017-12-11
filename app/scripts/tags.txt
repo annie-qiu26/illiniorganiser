@@ -9,8 +9,10 @@ Honorary < academic
 International
 Political < academic
 Religious
-Student Government < academic
+Government < academic
 Arts
+Cricket < sports
+Social
 Cultural
 All-women
 Philanthropy
@@ -18,14 +20,17 @@ Graduate
 Other
 
 Niche:
-African American < cultural
+African < cultural
 Asian American < cultural
 Disability < philanthropy
 Deaf < disability
 Blind < disability
 Arabian < cultural
 Armenian < cultural
+Ministry < religious
 Indian < cultural
+Rights < political
+Autism < philanthropy
 Bangladeshi < cultural
 Filipino < cultural
 Bengali < cultural
@@ -39,10 +44,17 @@ Dance < sports, fun
 Chinese < cultural
 Minority < cultural
 LGBTQ
+Union < government
+Ceremony < cultural
 Korean < cultural
 Greek < cultural
-Beauty
+Beauty < fun
 Hindu < cultural
+Investing < academic
+Skydiving < sports
+European
+Falun Dafa
+Tag < sports, fun
 Immigrants < cultural
 Iranian < cultural
 Jordanian < cultural
@@ -52,6 +64,7 @@ Malaysian < cultural
 Mexican < cultural
 Business < academic
 Mongolian < cultural
+Research < academic
 Multi-ethnic < cultural
 Japanese < cultural
 Native American < cultural
@@ -80,6 +93,10 @@ Magic < fun
 Cinema < fun
 Latin < cultural
 Yearbook
+Book < academic
+Camp < fun
+
+Council < academic
 Western < cultural
 Drawing < arts
 Band < music
@@ -155,6 +172,10 @@ Squash < sports
 Paintball < sports
 Track and field < sports
 Robotics < academic
+Travel < fun
+Colombian < cultural
+ACES < academic
+Fellowship < religious
 Accounting < academic
 Security < academic
 Environment
@@ -174,6 +195,10 @@ Mechanical engineering < academic
 Computer science < academic
 Trading < academic
 Food
+Outreach < academic
+IOS < computer science, academic
+Bradley Johnson
+Horror < social
 Entrepreneurship < academic
 Innovation < academic
 Poetry < academic
@@ -183,6 +208,8 @@ Networking < academic
 Animals < fun
 Careers < academic
 Law < academic
+Aviation < sports
+Astronomy < social
 Investment < academic
 Construction management < academic
 Business fraternity < academic, business
