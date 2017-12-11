@@ -11,6 +11,7 @@ import pprint
 
 MIN_RELEVANCE = 2  # minimum RAKE relevance score for a keyword to be considered
 DRY_RUN = False  # dry runs print would-be changes without saving them
+VERBOSE = True  # print all candidate keywords with scores
 RESET = True  # remove existing associations with tags before starting
 
 
@@ -33,8 +34,11 @@ for org in orgs:
             org.tags.clear()
         print('Removed all tags')
 
+    keywords_with_scores = r.get_ranked_phrases_with_scores()
+    if VERBOSE:
+        pp.pprint(keywords_with_scores)
     keywords_string = ' '.join([item[1] for item in
-                                filter(lambda a: a[0] >= MIN_RELEVANCE, r.get_ranked_phrases_with_scores())])
+                                filter(lambda a: a[0] >= MIN_RELEVANCE, keywords_with_scores)])
 
     for tag in tags:
         if tag.name.lower() in keywords_string:
