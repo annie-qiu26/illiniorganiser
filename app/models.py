@@ -116,7 +116,7 @@ class Tag(models.Model):
 
 
 class Organization(models.Model):
-    tags = models.ManyToManyField(Tag)
+    tags = models.ManyToManyField(Tag, blank=True)
     name = models.CharField(_('name'), max_length=64, unique=True)
     abbr = models.CharField(_('abbreviation'), max_length=10, null=True, blank=True, default='')
     found_date = models.DateTimeField(_('date founded'))
