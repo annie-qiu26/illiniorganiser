@@ -5622,3 +5622,46 @@ h3 {
   height: 250px;
   -o-object-fit: cover;
      object-fit: cover; }
+
+.tag-link {
+    background-color: #fbe674;
+    padding: 10px 20px;
+    margin: 0 5px;
+    border-radius: 50px;
+}
+
+.org-officer {
+    background-color: #f6f6f6;
+}
+
+
+.fb-profile .fb-image-lg{
+    height: 65vh;
+    min-height: 300px;
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.fb-image-profile
+{
+    margin: -90px 10px 0 400px;
+    z-index: 9;
+    width: 20%;
+}
+
+@media (max-width:768px) {
+
+    .fb-profile-text > h1 {
+        font-weight: 700;
+        font-size: 16px;
+    }
+
+    .fb-image-profile {
+        margin: -45px 10px 0px 25px;
+        z-index: 9;
+        width: 20%;
+    }
+}
