@@ -6029,7 +6029,7 @@ a.text-dark:focus, a.text-dark:hover {
   min-height: 300px;
   background: no-repeat center center scroll;
   background-size: cover; }
-@media (max-width: 768px) {
+@media (max-width: 991px) {
   .fb-profile-text > h1 {
     font-weight: 700;
     font-size: 16px; }
@@ -6110,5 +6110,11 @@ h3 {
   height: 250px;
   -o-object-fit: cover;
      object-fit: cover; }
-#search {
-  width: 400px; }
+.select2 {
+  width: 300px !important; }
+@media (min-width: 768px) {
+  .select2 {
+    width: 400px !important; } }
+@media (max-width: 767px) {
+  .navbar-brand {
+    display: none; } }

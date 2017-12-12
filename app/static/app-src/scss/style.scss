@@ -85,6 +85,18 @@ h3 {
   object-fit: cover;
 }
 
-#search {
-  width: 400px;
+.select2 {
+  width: 300px !important;
+}
+
+@include media-breakpoint-up(md) {
+  .select2 {
+    width: 400px !important;
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .navbar-brand {
+    display: none;
+  }
 }

@@ -16,7 +16,7 @@
     background-size: cover;
 }
 
-@media (max-width:768px) {
+@include media-breakpoint-down(md) {
     .fb-profile-text > h1 {
         font-weight: 700;
         font-size: 16px;

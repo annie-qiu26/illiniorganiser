@@ -11,18 +11,16 @@
         <h2>Browse Categories</h2>
         <div class="row">
             {% for tag in tags %}
-                <div class="col-md-2 col-sm-3 col-6">
-                    <div class="container">
-                        <div id = circleBox>
-                            {% if tag.image %}
-                                <a href="{% url 'tag' tag.id %}"><img class = "rounded-circle" src="{{ tag.image.url }}" class="card-img-top" alt="{{ tag.name }} logo"></a>
-                            {% else %}
-                                <a href="{% url 'tag' tag.id %}"><img class = "rounded-circle" src="{% static 'app/images/placeholder.png' %}" class="card-img-top" alt="{{ tag.name }} logo"></a>
-                            {% endif %}
-                        </div>
-                        <div class="card-body">
-                            <h5 style = "text-align: center"><a class="card-text" href="{% url 'tag' tag.id %}"> {{ tag.name }}</a></h5>
-                        </div>
+                <div class="col-3 col-md-2">
+                    <div id = circleBox>
+                        {% if tag.image %}
+                            <a href="{% url 'tag' tag.id %}"><img class = "rounded-circle" src="{{ tag.image.url }}" class="card-img-top" alt="{{ tag.name }} logo"></a>
+                        {% else %}
+                            <a href="{% url 'tag' tag.id %}"><img class = "rounded-circle" src="{% static 'app/images/placeholder.png' %}" class="card-img-top" alt="{{ tag.name }} logo"></a>
+                        {% endif %}
+                    </div>
+                    <div class="card-body">
+                        <h5 style = "text-align: center"><a class="card-text" href="{% url 'tag' tag.id %}"> {{ tag.name }}</a></h5>
                     </div>
                 </div>
             {% endfor %}
