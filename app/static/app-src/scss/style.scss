@@ -21,10 +21,12 @@ nav {
 
 h2 {
   padding-top: 20px;
+  margin-left: 10px;
 }
 
 h3 {
   padding-top: 20px;
+  margin-left: 10px;
 }
 
 .card-body {
@@ -67,6 +69,10 @@ h3 {
 
 .slick-prev:before, .slick-next:before {
     color: #fff15f !important;
+}
+
+.slick-slide {
+  padding: 0 10px;
 }
 
 .tag-title {

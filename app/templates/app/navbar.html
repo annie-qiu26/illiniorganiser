@@ -3,8 +3,10 @@
         <a class="navbar-brand" style = "font-weight: bold;" href="{% url 'index' %}">ILLINI ORGANIZER</a>
         <form class="form-inline">
             <select id="search" name="results[]">
-                {% if tag_obj %}
-                    <option selected="selected" value="{{ tag_obj.id }}">{{ tag_obj.name }}</option>
+                {% if tag %}
+                    <option selected="selected" value="{{ tag.id }}">{{ tag.name }}</option>
+                {% elif organization %}
+                    <option selected="selected" value="{{ organization.id }}">{{ organization }}</option>
                 {% endif %}
             </select>
 {#            <input id="search" type="text" class="form-control" placeholder="Search" name="q" value="{{ request.GET.q }}">#}
