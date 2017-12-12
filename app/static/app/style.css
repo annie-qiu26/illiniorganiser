@@ -5623,9 +5623,11 @@ h3 {
   -o-object-fit: cover;
      object-fit: cover; }
 .fb-image-profile {
+  padding-top: 15px;
   margin: -90px 40% 0 40%;
   z-index: 9;
-  width: 20%; }
+  width: 20%;
+  height: 30%; }
 .fb-profile .fb-image-lg {
   height: 65vh;
   min-height: 300px;
