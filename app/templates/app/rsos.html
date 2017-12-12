@@ -12,9 +12,9 @@
             {% for org in organizations %}
                 <div class="card" id = "organizations">
                     {% if org.get_cover %}
-                        <img src="{{ org.get_cover.image.url }}" alt="" class="card-img-top org-thumbnail">
+                        <a href="{% url 'detail' org.id %}"><img src="{{ org.get_cover.image.url }}" alt="" class="card-img-top org-thumbnail"></a>
                     {% else %}
-                        <img src="{% static 'app/images/placeholder.png' %}" alt="" class="card-img-top org-thumbnail">
+                        <a href="{% url 'detail' org.id %}"><img src="{% static 'app/images/placeholder.png' %}" alt="" class="card-img-top org-thumbnail"></a>
                     {% endif %}
                     <div class="card-body">
                         <a href="{% url 'detail' org.id %}"><h5 class="card-title">{{ org.name }}</h5></a>

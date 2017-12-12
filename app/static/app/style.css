@@ -5622,46 +5622,87 @@ h3 {
   height: 250px;
   -o-object-fit: cover;
      object-fit: cover; }
-
-.tag-link {
-    background-color: #fbe674;
-    padding: 10px 20px;
-    margin: 0 5px;
-    border-radius: 50px;
-}
-
-.org-officer {
-    background-color: #f6f6f6;
-}
-
-
-.fb-profile .fb-image-lg{
-    height: 65vh;
-    min-height: 300px;
-    background: no-repeat center center scroll;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-}
-
-.fb-image-profile
-{
-    margin: -90px 40% 0 40%;
+.fb-image-profile {
+  margin: -90px 40% 0 40%;
+  z-index: 9;
+  width: 20%; }
+.fb-profile .fb-image-lg {
+  height: 65vh;
+  min-height: 300px;
+  background: no-repeat center center scroll;
+  background-size: cover; }
+@media (max-width: 768px) {
+  .fb-profile-text > h1 {
+    font-weight: 700;
+    font-size: 16px; }
+  .fb-image-profile {
+    margin: -45px 10px 0px 25px;
     z-index: 9;
-    width: 20%;
-}
-
-@media (max-width:768px) {
-
-    .fb-profile-text > h1 {
-        font-weight: 700;
-        font-size: 16px;
-    }
-
-    .fb-image-profile {
-        margin: -45px 10px 0px 25px;
-        z-index: 9;
-        width: 20%;
-    }
-}
+    width: 20%; } }
+nav {
+  background-color: #fff15f; }
+* {
+  font-family: 'Nunito', sans-serif; }
+.space {
+  height: 30px; }
+#rsopix {
+  padding: 20px; }
+h2 {
+  padding-top: 20px; }
+h3 {
+  padding-top: 20px; }
+.card-body {
+  text-align: center; }
+.rounded-circle {
+  height: 100px;
+  width: 100px; }
+#circleBox {
+  margin-top: 10px;
+  text-align: center; }
+#rsodetails {
+  padding-top: 20px; }
+.nav-item {
+  font-weight: bold; }
+.mr-auto {
+  margin-right: 0 !important; }
+.navbar-toggleable-md .navbar-collapse {
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end; }
+#organizations {
+  margin-top: 15px; }
+.card {
+  margin-top: 10px;
+  margin-bottom: 10px; }
+.slick-prev:before, .slick-next:before {
+  color: #fff15f !important; }
+.tag-title {
+  color: black !important;
+  text-decoration: none; }
+.org-thumbnail {
+  height: 250px;
+  -o-object-fit: cover;
+  object-fit: cover; }
+.tag-link {
+  background-color: #fbe674;
+  padding: 10px 20px;
+  margin: 0 5px;
+  border-radius: 50px; }
+.org-officer {
+  background-color: #f6f6f6; }
+#rsodetails {
+  padding: 20px;
+  text-align: center; }
+#rsocontact {
+  padding: 20px; }
+#desc {
+  margin: auto; }
+#detail-officers {
+  padding: 20px; }
+#background-placeholder {
+  height: 90px; }
+#org-name {
+  padding: 10px; }
+#org-name-format {
+  padding: 10px;
+  text-align: center; }

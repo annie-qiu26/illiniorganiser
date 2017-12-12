@@ -10,7 +10,11 @@
 
     <header>
         <div class="fb-profile">
-            <div class="fb-image-lg" style="background-image: url({{ organization.get_cover.image.url }})"></div>
+            {% if organization.get_cover.image.url %}
+                <div class="fb-image-lg" style="background-image: url({{ organization.get_cover.image.url }})"></div>
+            {% else %}
+                <div id="background-placeholder"></div>
+            {% endif %}
 
             <div class="row">
                  <img align="left" class="fb-image-profile thumbnail" src="{% static 'app/images/placeholder.png' %}" alt="Profile image example"/>
@@ -18,24 +22,22 @@
         </div>
     </header>
 
-    <div class="container-fluid" style="padding: 10px; text-align: center">
+    <div class="container-fluid" id="org-name-format">
         <div style="margin: auto">
-            <h1 style="padding: 10px"> {{ organization.name }}</h1>
+            <h1 id="org-name"> {{ organization.name }}</h1>
             {% for tag in tags %}
                 <a class="tag-link" href="{% url 'rso' tag.id %}">{{ tag.name }}</a>
             {% endfor %}
         </div>
     </div>
 
-
-    <div class="container-fluid" id="rsodetails" style="padding: 20px; text-align: center">
-        <div style="margin: auto">
+    <div class="container-fluid" id="rsodetails">
+        <div id="desc">
             <p>{{ organization.description }}</p>
         </div>
     </div>
 
-
-    <div class="container-fluid org-officer" style="padding: 20px">
+    <div class="container-fluid org-officer" id="detail-officers">
         <div>
             <h4> Officers </h4>
              <div class="row">
@@ -53,6 +55,16 @@
                     {% endfor %}
                 {% endfor %}
             </div>
+        </div>
+    </div>
+
+    <div class="container-fluid" id="rsocontact">
+        <div>
+            <h4>Contact Information</h4>
+            <ul>
+                Email: {% if organization.email %} {{ organization.email }} <br> {% else %} NA <br> {% endif %}
+                Website: {% if organizaiton.website_url %} {{ organizaiton.website_url }} {% else %} NA {% endif %}
+            </ul>
         </div>
     </div>
 

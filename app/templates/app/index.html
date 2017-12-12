@@ -15,9 +15,9 @@
                     <div class="container">
                         <div id = circleBox>
                             {% if tag.image %}
-                                <img class = "rounded-circle" src="{{ tag.image.url }}" class="card-img-top" alt="{{ tag.name }} logo">
+                                <a href="{% url 'rso' tag.id %}"><img class = "rounded-circle" src="{{ tag.image.url }}" class="card-img-top" alt="{{ tag.name }} logo"></a>
                             {% else %}
-                                <img class = "rounded-circle" src="{% static 'app/images/placeholder.png' %}" class="card-img-top" alt="{{ tag.name }} logo">
+                                <a href="{% url 'rso' tag.id %}"><img class = "rounded-circle" src="{% static 'app/images/placeholder.png' %}" class="card-img-top" alt="{{ tag.name }} logo"></a>
                             {% endif %}
                         </div>
                         <div class="card-body">
@@ -36,9 +36,9 @@
                     <div class="col-md-3">
                         <div class="card">
                             {% if org.get_cover %}
-                                <img src="{{org.get_cover.image.url}}" class="card-img-top org-thumbnail" alt="thumbnail">
+                                <a href="{% url 'detail' org.id %}"><img src="{{org.get_cover.image.url}}" class="card-img-top org-thumbnail" alt="thumbnail"></a>
                             {% else %}
-                                <img src="{% static 'app/images/placeholder.png' %}" alt="thumbnail" class="card-img-top org-thumbnail">
+                                <a href="{% url 'detail' org.id %}"><img src="{% static 'app/images/placeholder.png' %}" alt="thumbnail" class="card-img-top org-thumbnail"></a>
                             {% endif %}
                             <div class="card-body">
                                 <a href="{% url 'detail' org.id %}"><h5 class="card-title">{{ org.name }}</h5></a>
