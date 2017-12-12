@@ -16,8 +16,8 @@
                 <div id="background-placeholder"></div>
             {% endif %}
 
-            <div class="row">
-                 <img align="left" class="fb-image-profile thumbnail" src="{% static 'app/images/placeholder.png' %}" alt="Profile image example"/>
+            <div class="row justify-content-center">
+                <img class="fb-image-profile thumbnail" src="{% static 'app/images/placeholder.png' %}" alt="Profile image example"/>
             </div>
         </div>
     </header>
@@ -25,9 +25,11 @@
     <div class="container-fluid" id="org-name-format">
         <div style="margin: auto">
             <h1 id="org-name"> {{ organization.name }}</h1>
-            {% for tag in tags %}
-                <a class="tag-link" href="{% url 'rso' tag.id %}">{{ tag.name }}</a>
-            {% endfor %}
+            <div class = "row justify-content-center">
+                {% for tag in tags %}
+                    <a class="tag-link" href="{% url 'rso' tag.id %}">{{ tag.name }}</a>
+                {% endfor %}
+            </div>
         </div>
     </div>
 
@@ -40,7 +42,7 @@
     <div class="container-fluid org-officer" id="detail-officers">
         <div>
             <h4> Officers </h4>
-             <div class="row">
+            <div class="row">
                 {% for position, holders in users.items %}
                     {% for user in holders %}
                         <div class="col-md-3">

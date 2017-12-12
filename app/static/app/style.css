@@ -5640,7 +5640,8 @@ h3 {
   .fb-image-profile {
     margin: -45px 10px 0px 25px;
     z-index: 9;
-    width: 20%; } }
+    width: 20%;
+    height: 20%; } }
 nav {
   background-color: #fff15f; }
 * {
@@ -5688,7 +5689,7 @@ h3 {
 .tag-link {
   background-color: #fbe674;
   padding: 10px 20px;
-  margin: 0 5px;
+  margin: 5px 5px;
   border-radius: 50px; }
 .org-officer {
   background-color: #f6f6f6; }
