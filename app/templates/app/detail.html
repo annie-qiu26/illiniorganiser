@@ -22,7 +22,7 @@
         <div style="margin: auto">
             <h1 style="padding: 10px"> {{ organization.name }}</h1>
             {% for tag in tags %}
-                <a class="tag-link" href="{% url 'rso' tag.id %}">{{ tag.name }}</a>
+                <a class="tag-link" href="{% url 'tag' tag.id %}">{{ tag.name }}</a>
             {% endfor %}
         </div>
     </div>

@@ -20,6 +20,7 @@ TAGS_PATH = join(BASE_PATH, 'tag-photos')
 ORGS_PATH = join(BASE_PATH, 'organization-photos')
 
 # adds images to tags
+
 for file_name in listdir(TAGS_PATH):
     print(join(TAGS_PATH, file_name))
     query = file_name.split('.')[0].replace('-', ' ')

@@ -9,18 +9,25 @@
 from urllib import request
 import json
 import pprint
+from termcolor import cprint
 from app.models import Organization, OrganizationPosition, MyUser
 
 
 DRY_RUN = False  # dry runs print would-be changes without saving them
 DOWNLOAD_ALL = False  # true for production, false for testing when you don't want to download everything
 ORGS_RANGE = range(0, 100)  # if DOWNLOAD_ALL is false, only pull from this many orgs
+RESET = True  # delete all existing regular users (aka not superusers)
 
 pp = pprint.PrettyPrinter()
 URL_BASE = 'https://illinois.campuslabs.com/engage/api/discovery/organization/'
 URL_END = '/position?take=100'
 
 with open('app/scripts/organizations.json', encoding='utf8') as file:
+
+    if RESET:
+        if not DRY_RUN:
+            MyUser.objects.filter(is_superuser=False).delete()
+        cprint('Deleted all users', 'green')
 
     organizations = json.load(file)
     organizations_count = 0
@@ -56,10 +63,7 @@ with open('app/scripts/organizations.json', encoding='utf8') as file:
                 elif type_name == 'Member / Participant':
                     position_type = 'M'
                 else:
-                    print('Weird position type:')
-                    print('*'*20)
-                    pp.pprint(position)
-                    print('*'*20)
+                    cprint('Weird position type: {}'.format(position_data), 'red')
                     break
 
                 position = OrganizationPosition(name=position_data['name'].strip(),
@@ -91,6 +95,6 @@ with open('app/scripts/organizations.json', encoding='utf8') as file:
 
 
     print()
-    print('Successfully downloaded {} users in {} positions for {} organizations'.format(users_count,
-                                                                                         positions_count,
-                                                                                         organizations_count))
+    cprint('Successfully downloaded {} users in {} positions for {} organizations'.format(users_count,
+                                                                                          positions_count,
+                                                                                          organizations_count), 'green')
