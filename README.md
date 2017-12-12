@@ -1,7 +1,9 @@
 # illiniorganizer
 
 Illini Organizer is a home for everything student-run at UIUC.
+
 Project Manager: Tulika Gupta
+
 Members: John Qian, David Fan, Karthik Mullapudi, Dmytro Tymofyeyev, Annie Qiu
 
 ## Tools
