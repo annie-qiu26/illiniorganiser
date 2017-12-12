@@ -7,6 +7,8 @@
                     <option selected="selected" value="{{ tag.id }}">{{ tag.name }}</option>
                 {% elif organization %}
                     <option selected="selected" value="{{ organization.id }}">{{ organization }}</option>
+                {% else %}
+                    <option selected="selected">Everything</option>
                 {% endif %}
             </select>
 {#            <input id="search" type="text" class="form-control" placeholder="Search" name="q" value="{{ request.GET.q }}">#}
