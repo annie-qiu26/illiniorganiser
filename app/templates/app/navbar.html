@@ -1,0 +1,30 @@
+<nav class="navbar navbar-expand-md navbar-light">
+    <div class = "container-fluid">
+        <a class="navbar-brand" style = "font-weight: bold;" href="{% url 'index' %}">ILLINI ORGANIZER</a>
+        <form class="form-inline">
+            <select id="search" name="results[]">
+                {% if tag %}
+                    <option selected="selected" value="{{ tag.id }}">{{ tag.name }}</option>
+                {% elif organization %}
+                    <option selected="selected" value="{{ organization.id }}">{{ organization }}</option>
+                {% else %}
+                    <option selected="selected">Everything</option>
+                {% endif %}
+            </select>
+{#            <input id="search" type="text" class="form-control" placeholder="Search" name="q" value="{{ request.GET.q }}">#}
+        </form>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class = "navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Sign Up</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Log In</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

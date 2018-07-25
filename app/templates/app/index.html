@@ -1,0 +1,49 @@
+{% extends 'app/base.html' %}
+
+{% block title %} Main Page {% endblock %}
+
+{% load static %}
+
+{% block content %}
+    {% include 'app/navbar.html' %}
+    {% include 'app/sidebar.html' %}
+    <div class="container" id = "categories">
+        <h2>Browse Categories</h2>
+        <div class="row">
+            {% for tag in tags %}
+                <div class="col-3 col-md-2">
+                    <div id = circleBox>
+                        {% if tag.image %}
+                            <a href="{% url 'tag' tag.id %}"><img class = "rounded-circle" src="{{ tag.image.url }}" class="card-img-top" alt="{{ tag.name }} logo"></a>
+                        {% else %}
+                            <a href="{% url 'tag' tag.id %}"><img class = "rounded-circle" src="{% static 'app/images/placeholder.png' %}" class="card-img-top" alt="{{ tag.name }} logo"></a>
+                        {% endif %}
+                    </div>
+                    <div class="card-body">
+                        <h5 style = "text-align: center"><a class="card-text" href="{% url 'tag' tag.id %}"> {{ tag.name }}</a></h5>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="container">
+        {% for tag in organizations %}
+            <h3>{{ tag.name }}</h3>
+            <div class="responsive-slider">
+                {% for org in tag.orgs %}
+                    <div class="card">
+                        {% if org.get_cover %}
+                            <a href="{% url 'detail' org.id %}"><img src="{{org.get_cover.image.url}}" class="card-img-top org-thumbnail" alt="thumbnail"></a>
+                        {% else %}
+                            <a href="{% url 'detail' org.id %}"><img src="{% static 'app/images/placeholder.png' %}" alt="thumbnail" class="card-img-top org-thumbnail"></a>
+                        {% endif %}
+                        <div class="card-body">
+                            <a href="{% url 'detail' org.id %}"><h5 class="card-title">{{ org.name }}</h5></a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}

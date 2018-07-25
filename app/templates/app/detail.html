@@ -1,0 +1,78 @@
+{% extends 'app/base.html' %}
+
+{% block title %} {{ organization.name }} {% endblock %}
+
+{% load static %}
+
+{% block content %}
+    {% include 'app/navbar.html' %}
+    {% include 'app/sidebar.html' %}
+
+    <header>
+        <div class="fb-profile">
+            {% if organization.get_cover.image.url %}
+                <div class="fb-image-lg" style="background-image: url({{ organization.get_cover.image.url }})"></div>
+            {% else %}
+                <div id="background-placeholder"></div>
+            {% endif %}
+
+            <div class="row justify-content-center">
+                {% if organization.logo %}
+                    <img class="fb-image-profile thumbnail" src="{{ organization.logo.url }}" alt="Profile image example"/>
+                {% else %}
+                    <img class="fb-image-profile thumbnail" src="{% static 'app/images/placeholder.png' %}" alt="Profile image example"/>
+                {% endif %}
+            </div>
+        </div>
+    </header>
+
+    <div class="container-fluid" id="org-name-format">
+        <div style="margin: auto">
+            <h1 id="org-name"> {{ organization.name }}</h1>
+            <div class = "row justify-content-center">
+                {% for tag in tags %}
+                    <a class="tag-link" href="{% url 'tag' tag.id %}">{{ tag.name }}</a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <div class="container" id="rsodetails">
+        <div id="desc">
+            <p>{{ organization.description }}</p>
+        </div>
+    </div>
+
+    <div class="container-fluid org-officer" id="detail-officers">
+        <div>
+            <h4> Officers </h4>
+            <div class="row">
+                {% for position, holders in users.items %}
+                    {% for user in holders %}
+                        <div class="col-6 col-md-3">
+                            <div class="card">
+                                <img src="{% static 'app/images/placeholder.png' %}" alt="" class="card-img-top">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ user.get_full_name }}</h5>
+                                    <p class="card-text">{{ position }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid" id="rsocontact">
+        <div>
+            <h4>Contact Information</h4>
+            <ul>
+                Email: {% if organization.email %} {{ organization.email }} <br> {% else %} NA <br> {% endif %}
+                Website: {% if organizaiton.website_url %} {{ organizaiton.website_url }} {% else %} NA {% endif %}
+            </ul>
+        </div>
+    </div>
+
+
+{% endblock %}

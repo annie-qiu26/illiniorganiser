@@ -1,0 +1,27 @@
+{% extends 'app/base.html' %}
+
+{% block title %} Main Page {% endblock %}
+
+{% load static %}
+
+{% block content %}
+    {% include 'app/navbar.html' %}
+    {% include 'app/sidebar.html' %}
+    <div class="container">
+        <div class="card-columns">
+            {% for org in organizations %}
+                <div class="card" id = "organizations">
+                    {% if org.get_cover %}
+                        <a href="{% url 'detail' org.id %}"><img src="{{ org.get_cover.image.url }}" alt="" class="card-img-top org-thumbnail"></a>
+                    {% else %}
+                        <a href="{% url 'detail' org.id %}"><img src="{% static 'app/images/placeholder.png' %}" alt="" class="card-img-top org-thumbnail"></a>
+                    {% endif %}
+                    <div class="card-body">
+                        <a href="{% url 'detail' org.id %}"><h5 class="card-title">{{ org.name }}</h5></a>
+                        <p class="card-text">{{ org.summary }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,102 @@
+@import "~bootstrap/scss/bootstrap";
+@import "~select2/src/scss/core";
+@import "main";
+@import "detail";
+
+nav {
+  background-color: #fff15f;
+}
+
+*{
+  font-family: 'Nunito', sans-serif;
+}
+
+.space {
+  height: 30px;
+}
+
+#rsopix {
+  padding: 20px;
+}
+
+h2 {
+  padding-top: 20px;
+  margin-left: 10px;
+}
+
+h3 {
+  padding-top: 20px;
+  margin-left: 10px;
+}
+
+.card-body {
+  text-align: center;
+}
+.rounded-circle {
+  height: 100px;
+  width: 100px;
+}
+
+#circleBox {
+  margin-top: 10px;
+  text-align: center;
+}
+
+#rsodetails {
+  padding-top: 20px;
+}
+
+.nav-item {
+  font-weight: bold;
+}
+
+.mr-auto {
+    margin-right: 0 !important;
+}
+.navbar-toggleable-md .navbar-collapse {
+    -webkit-justify-content: flex-end;
+    justify-content: flex-end;
+}
+
+#organizations {
+  margin-top: 15px;
+}
+
+.card {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.slick-prev:before, .slick-next:before {
+    color: #fff15f !important;
+}
+
+.slick-slide {
+  padding: 0 10px;
+}
+
+.tag-title {
+  color: black !important;
+  text-decoration: none;
+}
+
+.org-thumbnail {
+  height: 250px;
+  object-fit: cover;
+}
+
+.select2 {
+  width: 300px !important;
+}
+
+@include media-breakpoint-up(md) {
+  .select2 {
+    width: 400px !important;
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .navbar-brand {
+    display: none;
+  }
+}

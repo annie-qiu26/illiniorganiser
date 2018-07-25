@@ -1,0 +1,279 @@
+Broad:
+Academic
+Fun
+Sports
+Greek Life
+
+Specific:
+Honorary < academic
+International
+Political < academic
+Religious
+Government < academic
+Arts
+Social
+Cultural
+All women
+Philanthropy
+Graduate
+
+Niche:
+African < cultural
+Asian American < cultural
+Disability < philanthropy
+Deaf < disability
+Blind < disability
+Arabian < cultural
+Armenian < cultural
+Ministry < religious
+Indian < cultural
+Rights < political
+Autism < philanthropy
+Bangladeshi < cultural
+Filipino < cultural
+Bengali < cultural
+Yoga < sports
+Cricket < sports
+Ballet < sports, dance
+Assyrian < cultural
+Chorus < arts, music
+A capella < chorus
+Equine < fun
+Ballista < academic
+Taekwondo < sports
+Sneakerhead < social
+Brazilian < cultural
+Public relations < academic
+Dance < sports, fun
+Chinese < cultural
+Minority < cultural
+LGBTQ
+Union < government
+Ceremony < cultural
+Korean < cultural
+Greek < cultural
+Beauty < fun
+Hindu < cultural
+Investing < academic
+Skydiving < sports
+European
+Falun Dafa
+Tag < sports, fun
+Immigrants < cultural
+Iranian < cultural
+Jordanian < cultural
+Lao < cultural
+Latino < cultural
+Malaysian < cultural
+Mexican < cultural
+Business < academic
+Mongolian < cultural
+Research < academic
+Multi-ethnic < cultural
+Japanese < cultural
+Native American < cultural
+Peruvian < cultural
+Phillipino < cultural
+Polish < cultural
+Russian < cultural
+South Asian < cultural
+Taiwanese < cultural
+Debate < academic
+Turkish < cultural
+Vietnamese < cultural
+Music < arts
+Design < arts
+History < academic
+Crafts < fun
+Bollywood < fun
+Photography < arts
+Writing < academic
+Theatre < arts
+Folk
+Hip-hop < sports
+Guitar < music
+Bhangra < cultural
+Magic < fun
+Cinema < fun
+Latin < cultural
+Yearbook
+Book < academic
+Camp
+Energize < social
+kindness < philanthropy
+Rodeo < sports
+Council < academic
+Western < cultural
+Optometry < academic
+Pharmacy < academic
+Hearthstone < games, social
+Drawing < arts
+Band < music
+Muslim < cultural, religious
+Comedy < fun
+Videography < arts
+Radio
+Acting < arts
+Film < arts
+Improv < arts
+Fashion < arts
+Magazine
+Mentorship < academic
+All-male
+Gymnastics < sports
+Self defense < sports
+Badminton < sports
+Hockey < sports
+Judo < sports
+Aquatic sports < sports
+Swimming < sports
+Table Tennis < sports
+Firearms < fun
+Lacrosse < sports
+Baseball < sports
+Rowing < sports
+Rugby < sports
+Frisbee < sports
+Volleyball < sports
+Karate < sports
+Skating < sports
+Triathlon < sports
+Hockey < sports
+Basketball < sports
+Softball < sports
+Archery < sports
+Trivia < academic, fun
+Meditation < health
+Games < fun
+Martial arts < sports
+Tricking < sports
+Fencing < sports
+Tennis < sports
+Fitness < sports
+Cross-country < sports
+Extreme sports < sports
+Board games < sports
+Chess < sports
+Video games < fun
+Weightlifting < sports
+Billiards < sports
+Fishing < sports
+Cycling < sports
+Golf < sports
+Technology < academic
+Racing < sports
+Handball < sports
+Juggling < sports
+Cycling < sports
+Longboarding < sports
+Racquetball < sports
+Quidditch < sports
+Card games
+Soccer < sports
+Sculling < sports
+Sailing < sports
+Skiing < sports
+Snowboarding < sports
+Spikeball < sports
+Football < sports
+Adventure < fun
+Squash < sports
+Paintball < sports
+Track and field < sports
+Robotics < academic
+Travel < fun
+Colombian < cultural
+ACES < academic
+Fellowship < religious
+Accounting < academic
+Security < academic
+Environment
+Science < academic
+Chemistry < academic
+Leadership < academic
+Agriculture < academic
+Agronomy < agriculture, academic
+Advertising < academic
+Aeronautics < academic
+Engineering < academic
+Marketing < academic
+Medical < academic
+Biology < academic
+Civil engineering < academic
+Mechanical engineering < academic
+Computer science < academic
+Trading < academic
+Food
+Outreach < academic
+IOS < computer science, academic
+Bradley Johnson
+Horror < social
+Entrepreneurship < academic
+Innovation < academic
+Poetry < academic
+Christian < religious
+Software development < academic
+Networking < academic
+Animals < fun
+Careers < academic
+Law < academic
+Aviation < sports
+Astronomy < social
+Investment < academic
+Construction management < academic
+Business fraternity < academic, business
+Economics < academic
+Urban Planning < academic
+Policy < academic
+Entomology < academic
+Computer engineering < academic
+Finance < academic
+Health < academic
+Ecology < academic
+Human development
+Nutrition < academic
+Advising < academic
+Cars < fun
+Statistics < academic
+Physics < academic
+Consulting < academic
+Neuroscience < academic
+Space < academic
+Solar < academic
+Disease < academic
+Transportation
+Interdisciplinary < academic
+Kinesiology < academic
+Liberal arts < academic
+Mind and body < health
+Materials Science < academic
+Journalism < academic
+Speech < academic
+Mathematics < academic
+Philosophy < academic
+Sex < health
+Education < academic
+Nursing < academic
+Veterinarians
+Anime < fun
+Astronomy < academic
+Saudi < cultural
+Republican < political
+Democratic < political
+Libertarian < political
+Progressive < political
+Socialist < political
+Baptist < religious
+Catholic < religious
+Presbyterian < religious
+Jewish < religious
+Buddhist < religious
+Lutheran < religious
+Sikh < religious
+Vedanta < religious
+Residence hall
+Equality < political
+ROTC
+STEM < academic
+Social fraternity < greek life
+Sorority < greek life, all women

@@ -55,8 +55,6 @@ ROOT_URLCONF = 'illini.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')]
-        ,
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -101,6 +99,10 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# User Model
+
+AUTH_USER_MODEL = 'app.MyUser'
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
@@ -122,6 +124,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
-    "templates/static"
 ]
 
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = "/media/"
